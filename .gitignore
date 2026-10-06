@@ -1,0 +1,142 @@
+## Gitignore untuk Visual Studio / C# / .NET (Desktop Development - WinForms & Console)
+## Template resmi dari github/gitignore : VisualStudio.gitignore
+## Source code (.cs, .csproj, .slnx, .resx, .config) TETAP di-track, yang diabaikan hanya hasil build & file lokal.
+
+###############################################################################
+# Build results
+###############################################################################
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+[Ww][Ii][Nn]32/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+bld/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+
+###############################################################################
+# Visual Studio files
+###############################################################################
+.vs/
+.vscode/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.sln.ide/
+*.userprefs
+
+# MonoDevelop / Visual Studio for Mac
+*.pidb
+*.svclog
+*.scc
+
+# dotCover, dotTrace, dotMemory
+*.dotCover
+*.dotTrace
+*.dotMemory
+
+###############################################################################
+# MSTest / NUnit / xUnit test results
+###############################################################################
+[Tt]est[Rr]esult*/
+[Bb]uild[Ll]og.*
+TestResult.xml
+*.TestAdapter.dll
+
+###############################################################################
+# NuGet
+###############################################################################
+*.nupkg
+*.snupkg
+**/[Pp]ackages/*
+!**/[Pp]ackages/build/
+*.nuget.props
+*.nuget.targets
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# NuGet local cache - jangan di-commit, biar tiap mesin restore sendiri
+# ~/.nuget/packages sudah di luar repo secara default
+
+###############################################################################
+# .NET Core / .NET 5+
+###############################################################################
+projectile.cache
+!*.[Pp]roject.[Cc]ache.json
+
+###############################################################################
+# ASP.NET / Azure (tetap disertakan biar aman kalau nanti nambah proyek web)
+###############################################################################
+PublishProfiles/
+*.azurePubxml
+*.pubxml
+*.publishproj
+PublishScripts/
+AppPackages/
+BundleArtifacts/
+Package.StoreAssociation.xml
+pkg/
+*.appx
+*.appxbundle
+*.appxupload
+*.msix
+*.msixbundle
+*.msixupload
+
+###############################################################################
+# Windows image / installer
+###############################################################################
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+
+###############################################################################
+# Rider (JetBrains)
+###############################################################################
+.idea/
+*.sln.iml
+
+###############################################################################
+# VS Code (opsional, aman diabaikan)
+###############################################################################
+.history/
+
+###############################################################################
+# OS generated files
+###############################################################################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+ehthumbs_vista.db
+[Tt]humbs.db
+[Dd]esktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+###############################################################################
+# Temporary / backup files
+###############################################################################
+*.tmp
+*.temp
+*.bak
+*.swp
+*~.nib
+local.settings.json
+*.orig
+
+# Crash dumps / logs
+*.log
+*.tlog

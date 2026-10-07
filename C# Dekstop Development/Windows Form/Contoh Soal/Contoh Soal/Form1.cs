@@ -21,13 +21,59 @@ namespace Contoh_Soal
 
         private void BtnLogin_Click(object sender, EventArgs e)
         {
-            // Sederhana: sembunyikan login, buka dashboard secara modal.
-            // Saat dashboard ditutup (logout/X), login tampil lagi otomatis.
-            this.Hide();
-            using (Form3Dashboard dash = new Form3Dashboard())
+            string username = txtUsername.Text.Trim();
+            string password = textBox2.Text;
+
+            if (username == "" || password == "")
             {
-                dash.ShowDialog(this);
+                MessageBox.Show("Username dan password wajib diisi.", "Validasi",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
             }
+
+            Akun akun;
+            try
+            {
+                using (BandaraEntities db = new BandaraEntities())
+                {
+                    akun = db.Akun.FirstOrDefault(a => a.Username == username && a.Password == password);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Gagal terhubung ke database.\n" + ex.Message, "Database",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (akun == null)
+            {
+                MessageBox.Show("Username atau password salah.", "Login Gagal",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // Sederhana: sembunyikan login, buka form sesuai peran secara modal.
+            // Saat form ditutup (logout), login tampil lagi otomatis.
+            // Jika form utama ditutup via X, aplikasi ikut tertutup (ditangani masing-masing form).
+            this.Hide();
+            if (akun.MerupakanAdmin)
+            {
+                using (Form3Dashboard dash = new Form3Dashboard())
+                {
+                    dash.ShowDialog(this);
+                }
+            }
+            else
+            {
+                using (Form9CustomerMain cust = new Form9CustomerMain())
+                {
+                    cust.SetLoggedInUser(akun.ID, akun.Nama);
+                    cust.ShowDialog(this);
+                }
+            }
+            txtUsername.Clear();
+            textBox2.Clear();
             this.Show();
         }
 

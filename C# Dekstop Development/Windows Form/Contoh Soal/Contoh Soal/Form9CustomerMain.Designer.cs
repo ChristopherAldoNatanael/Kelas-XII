@@ -28,7 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form9CustomerMain));
             this.pnlTop = new System.Windows.Forms.Panel();
+            this.picLogo = new System.Windows.Forms.PictureBox();
+            this.picTiket = new System.Windows.Forms.PictureBox();
+            this.picLogout = new System.Windows.Forms.PictureBox();
             this.lblHalo = new System.Windows.Forms.Label();
             this.lblSapaan = new System.Windows.Forms.Label();
             this.lblDari = new System.Windows.Forms.Label();
@@ -41,15 +45,12 @@
             this.numPenumpang = new System.Windows.Forms.NumericUpDown();
             this.btnCari = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.picLogo = new System.Windows.Forms.PictureBox();
-            this.picTiket = new System.Windows.Forms.PictureBox();
-            this.picLogout = new System.Windows.Forms.PictureBox();
             this.pnlTop.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numPenumpang)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picTiket)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLogout)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numPenumpang)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlTop
@@ -62,6 +63,41 @@
             this.pnlTop.Name = "pnlTop";
             this.pnlTop.Size = new System.Drawing.Size(1000, 100);
             this.pnlTop.TabIndex = 0;
+            // 
+            // picLogo
+            // 
+            this.picLogo.BackColor = System.Drawing.Color.Transparent;
+            this.picLogo.Image = global::Contoh_Soal.Properties.Resources.Logo_Alt___Without_Padding1;
+            this.picLogo.Location = new System.Drawing.Point(20, 12);
+            this.picLogo.Name = "picLogo";
+            this.picLogo.Size = new System.Drawing.Size(300, 76);
+            this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picLogo.TabIndex = 0;
+            this.picLogo.TabStop = false;
+            // 
+            // picTiket
+            // 
+            this.picTiket.BackColor = System.Drawing.Color.Transparent;
+            this.picTiket.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picTiket.Image = global::Contoh_Soal.Properties.Resources.airplane_ticket_nav;
+            this.picTiket.Location = new System.Drawing.Point(870, 28);
+            this.picTiket.Name = "picTiket";
+            this.picTiket.Size = new System.Drawing.Size(45, 45);
+            this.picTiket.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picTiket.TabIndex = 1;
+            this.picTiket.TabStop = false;
+            // 
+            // picLogout
+            // 
+            this.picLogout.BackColor = System.Drawing.Color.Transparent;
+            this.picLogout.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picLogout.Image = global::Contoh_Soal.Properties.Resources.log_out_alt_72;
+            this.picLogout.Location = new System.Drawing.Point(930, 28);
+            this.picLogout.Name = "picLogout";
+            this.picLogout.Size = new System.Drawing.Size(45, 45);
+            this.picLogout.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picLogout.TabIndex = 2;
+            this.picLogout.TabStop = false;
             // 
             // lblHalo
             // 
@@ -182,41 +218,6 @@
             this.pictureBox1.TabIndex = 12;
             this.pictureBox1.TabStop = false;
             // 
-            // picLogo
-            // 
-            this.picLogo.BackColor = System.Drawing.Color.Transparent;
-            this.picLogo.Image = global::Contoh_Soal.Properties.Resources.Logo_Alt___Without_Padding1;
-            this.picLogo.Location = new System.Drawing.Point(20, 12);
-            this.picLogo.Name = "picLogo";
-            this.picLogo.Size = new System.Drawing.Size(300, 76);
-            this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picLogo.TabIndex = 0;
-            this.picLogo.TabStop = false;
-            // 
-            // picTiket
-            // 
-            this.picTiket.BackColor = System.Drawing.Color.Transparent;
-            this.picTiket.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picTiket.Image = global::Contoh_Soal.Properties.Resources.airplane_ticket_nav;
-            this.picTiket.Location = new System.Drawing.Point(870, 28);
-            this.picTiket.Name = "picTiket";
-            this.picTiket.Size = new System.Drawing.Size(45, 45);
-            this.picTiket.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picTiket.TabIndex = 1;
-            this.picTiket.TabStop = false;
-            // 
-            // picLogout
-            // 
-            this.picLogout.BackColor = System.Drawing.Color.Transparent;
-            this.picLogout.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picLogout.Image = global::Contoh_Soal.Properties.Resources.log_out_alt_72;
-            this.picLogout.Location = new System.Drawing.Point(930, 28);
-            this.picLogout.Name = "picLogout";
-            this.picLogout.Size = new System.Drawing.Size(45, 45);
-            this.picLogout.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picLogout.TabIndex = 2;
-            this.picLogout.TabStop = false;
-            // 
             // Form9CustomerMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
@@ -237,15 +238,16 @@
             this.Controls.Add(this.lblHalo);
             this.Controls.Add(this.pnlTop);
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form9CustomerMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "%";
+            this.Text = "Bromo Airlines - Customer";
             this.pnlTop.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.numPenumpang)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picTiket)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLogout)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numPenumpang)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
